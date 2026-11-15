@@ -87,20 +87,22 @@ document.documentElement.dataset.theme = theme;
 const COL1 = 20;                      // 单列内容左边缘
 const ICON = 16;
 
+// 两种模式共用 8 行指标：勾选「显示更多信息」只多一张 Go 卡
+const ROWS = [
+  { y: 46,  ic: 'up',   label: '上传' },
+  { y: 74,  ic: 'down', label: '下载' },
+  { y: 102, ic: 'cpu',  label: 'CPU 使用率' },
+  { y: 130, ic: 'temp', label: 'CPU 温度' },
+  { y: 158, ic: 'gpu',  label: 'GPU 使用率' },
+  { y: 186, ic: 'temp', label: 'GPU 温度' },
+  { y: 214, ic: 'mem',  label: '内存占用' },
+  { y: 242, ic: 'freq', label: 'CPU 频率' },
+];
+
 const L = {
   w: 260, h: 424,
   head: { h: 36, logo: [12, 7, 22], title: [42, 13], live: { top: 8, h: 20 } },
   card1: { x: 8, y: 36, w: 244, h: 244 },
-  rows: [
-    { y: 46,  ic: 'up',   label: '上传' },
-    { y: 74,  ic: 'down', label: '下载' },
-    { y: 102, ic: 'cpu',  label: 'CPU 使用率' },
-    { y: 130, ic: 'temp', label: 'CPU 温度' },
-    { y: 158, ic: 'gpu',  label: 'GPU 使用率' },
-    { y: 186, ic: 'temp', label: 'GPU 温度' },
-    { y: 214, ic: 'mem',  label: '内存占用' },
-    { y: 242, ic: 'freq', label: 'CPU 频率' },
-  ],
   card2: { x: 8, y: 288, w: 244, h: 128 },
   sect: { x: 20, y: 298, h: 20, icon: 14, label: 'OpenCode Go' },
   go: [
@@ -112,18 +114,11 @@ const L = {
   remainLabel: 76,
 };
 
+// 普通模式 = 详细模式去掉 Go 卡，8 行指标坐标完全一致
 const S = {
-  w: 260, h: 220,
-  head: { h: 32, logo: [12, 6, 20], title: [40, 12], live: { top: 7, h: 18 } },
-  card1: { x: 8, y: 32, w: 244, h: 180 },
-  rows: [
-    { y: 38,  ic: 'up',   label: '上传' },
-    { y: 66,  ic: 'down', label: '下载' },
-    { y: 94,  ic: 'cpu',  label: 'CPU 使用率' },
-    { y: 122, ic: 'temp', label: 'CPU 温度' },
-    { y: 150, ic: 'gpu',  label: 'GPU 使用率' },
-    { y: 178, ic: 'mem',  label: '内存占用' },
-  ],
+  w: 260, h: 288,
+  head: L.head,
+  card1: L.card1,
 };
 
 const C = mode === 's' ? S : L;
@@ -140,7 +135,7 @@ html += `<div class="live" style="right:12px;top:${C.head.live.top}px;height:${C
 
 // 指标卡
 html += `<div class="card" style="left:${C.card1.x}px;top:${C.card1.y}px;width:${C.card1.w}px;height:${C.card1.h}px"></div>`;
-for (const r of C.rows) {
+for (const r of ROWS) {
   html += `<div class="row" style="left:${COL1}px;top:${r.y}px">${icon(r.ic, ICON)}<span class="label">${r.label}</span></div>`;
 }
 

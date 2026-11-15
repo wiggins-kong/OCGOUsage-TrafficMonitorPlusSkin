@@ -1,4 +1,4 @@
-# OCGO — TrafficMonitorPlus Win11 皮肤
+# OCGOUsage — TrafficMonitorPlus Win11 皮肤
 
 Win11 Fluent 风格的双主题皮肤，附带 OpenCode Go 的 5 小时 / 每周 / 每月剩余额度与重置倒计时。
 
@@ -10,7 +10,7 @@ Win11 Fluent 风格的双主题皮肤，附带 OpenCode Go 的 5 小时 / 每周
 | CPU | 使用率、温度、频率 |
 | GPU | 使用率、温度 |
 | 内存 | 占用率 |
-| OpenCode Go | 5 小时 / 每周 / 每月：剩余百分比 + 重置倒计时 |
+| OpenCode Go | 5 小时 / 每周 / 每月：剩余百分比 + 重置倒计时（仅详细模式） |
 
 - `skins/OCGO-Light` — 浅色（强调色 `#0067C0`）
 - `skins/OCGO-Dark` — 深色（强调色 `#4CC2FF`）
@@ -38,9 +38,9 @@ pwsh -File gen\build.ps1
 
 ## 尺寸
 
-| 模式 | 窗口 |
-| --- | --- |
-| `layout_l`（详细） | 260 × 424 |
-| `layout_s`（普通） | 260 × 220 |
+| 模式 | 窗口 | 内容 |
+| --- | --- | --- |
+| `layout_l`（详细，勾选「显示更多信息」） | 260 × 424 | 8 项硬件指标 + OpenCode Go 卡 |
+| `layout_s`（普通，未勾选） | 260 × 288 | 8 项硬件指标 |
 
-详细模式为单列排版：上面 8 行硬件信息，下面 OpenCode Go 卡片。
+是否勾选「显示更多信息」**只决定 OpenCode Go 卡在不在**：两种模式都是单列 8 行硬件信息，坐标完全一致。

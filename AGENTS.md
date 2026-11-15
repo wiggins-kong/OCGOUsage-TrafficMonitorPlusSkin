@@ -16,6 +16,7 @@ TrafficMonitorPlus 的 Win11 Fluent 双主题皮肤（OCGO），附带 OpenCode 
 ## 约定
 
 - 文案与最新变更说明用中文；命令、路径、标识符保持原样。
+- 两种模式都是单列 8 项硬件指标；「显示更多信息」只决定 OpenCode Go 卡在不在（`layout_s` 260×288、`layout_l` 260×424），两者行坐标一致。
 - 文字（标签、标题）全部烘焙进背景图，程序只画数值，所以 `skin.xml` 里所有 `display_text` 留空。
 - `skins/OCGO-Light` 强调色 `#0067C0`，`skins/OCGO-Dark` 强调色 `#4CC2FF`。
 - 无测试、无 CI、无 lint。改动靠 `gen\build.ps1` 重新生成 + demo 预览验证。

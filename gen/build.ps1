@@ -9,7 +9,7 @@ $edge  = 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 $skins = Join-Path $root 'skins'
 
 # 100% DPI 下的窗口尺寸
-$DIM = @{ l = @{ w = 260; h = 424 }; s = @{ w = 260; h = 220 } }
+$DIM = @{ l = @{ w = 260; h = 424 }; s = @{ w = 260; h = 288 } }
 
 function New-Mask([string]$path, [int]$w, [int]$h, [int]$radius) {
     $bmp = New-Object System.Drawing.Bitmap($w, $h)
@@ -101,18 +101,20 @@ foreach ($theme in @('light', 'dark')) {
 			<gom_left x="101" y="381" width="40" align="0" show="1"/>
 			<gom_reset x="185" y="381" width="60" align="0" show="1"/>
 		</layout_l>
-		<layout_s width="260" height="220">
-			<up x="140" y="41" width="100" align="1" show="1"/>
-			<down x="140" y="69" width="100" align="1" show="1"/>
-			<cpu x="140" y="97" width="100" align="1" show="1"/>
-			<cpu_temperature x="140" y="125" width="100" align="1" show="1"/>
-			<gpu x="140" y="153" width="100" align="1" show="1"/>
-			<memory x="140" y="181" width="100" align="1" show="1"/>
+		<layout_s width="260" height="288">
+			<up x="140" y="49" width="100" align="1" show="1"/>
+			<down x="140" y="77" width="100" align="1" show="1"/>
+			<cpu x="140" y="105" width="100" align="1" show="1"/>
+			<cpu_temperature x="140" y="133" width="100" align="1" show="1"/>
+			<gpu x="140" y="161" width="100" align="1" show="1"/>
+			<gpu_temperature x="140" y="189" width="100" align="1" show="1"/>
+			<memory x="140" y="217" width="100" align="1" show="1"/>
+			<cpu_freq x="140" y="245" width="100" align="1" show="1"/>
 		</layout_s>
 	</layout>
-	<preview width="300" height="700">
-		<l x="20" y="20"/>
-		<s x="20" y="460"/>
+	<preview width="300" height="760">
+		<l x="20" y="8"/>
+		<s x="20" y="440"/>
 	</preview>
 </root>
 "@

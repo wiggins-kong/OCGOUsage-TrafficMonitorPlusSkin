@@ -92,9 +92,6 @@
   .row.go { gap: 0; }
   .row.go .gl { font-size: 12px; color: var(--text2); white-space: nowrap; }
   .row.go .gv { font-size: 12px; font-weight: 600; white-space: nowrap; }
-
-  /* 普通模式（260 x 220）：6 行单列 */
-  .win.small .card { padding: 6px 12px; }
 </style>
 </head>
 <body>
@@ -147,17 +144,24 @@
   </div>
 </div>
 
-<div class="cap">layout_s · 普通模式</div>
-<div class="frame" style="height:440px">
+<div class="cap">layout_s · 普通模式（只是不显示 OpenCode Go 卡）</div>
+<div class="frame" style="height:576px">
   <div class="stage">
     <div class="win small">
+      <div class="head">
+        <div class="logo"><svg width="14" height="14"><use href="#ic-pulse"/></svg></div>
+        <div class="title">性能监控</div>
+        <div class="live"><i></i>实时</div>
+      </div>
       <div class="card">
         <div class="row"><svg><use href="#ic-up"/></svg><span class="label">上传</span><span class="val">1.24 MB/s</span></div>
         <div class="row"><svg><use href="#ic-down"/></svg><span class="label">下载</span><span class="val">86.7 MB/s</span></div>
         <div class="row"><svg><use href="#ic-cpu"/></svg><span class="label">CPU 使用率</span><span class="val">23%</span></div>
         <div class="row"><svg><use href="#ic-temp"/></svg><span class="label">CPU 温度</span><span class="val">58°C</span></div>
         <div class="row"><svg><use href="#ic-gpu"/></svg><span class="label">GPU 使用率</span><span class="val">34%</span></div>
+        <div class="row"><svg><use href="#ic-temp"/></svg><span class="label">GPU 温度</span><span class="val">62°C</span></div>
         <div class="row"><svg><use href="#ic-mem"/></svg><span class="label">内存占用</span><span class="val">39%</span></div>
+        <div class="row"><svg><use href="#ic-freq"/></svg><span class="label">CPU 频率</span><span class="val">4.71 GHz</span></div>
       </div>
     </div>
   </div>
